@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, MostraMensagemActivity::class.java)
 
-
+        intent.putExtra("MENSAGEM", mensagem)
         startActivity(intent)
     }
 }
