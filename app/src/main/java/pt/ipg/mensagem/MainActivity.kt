@@ -7,7 +7,9 @@ import android.view.View
 import android.widget.EditText
 
 class MainActivity : AppCompatActivity() {
-    public val INFO_EXTRA_MENSAGEM : String = "MENSAGEM"
+    companion object {
+        val INFO_EXTRA_MENSAGEM : String = "MENSAGEM"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
