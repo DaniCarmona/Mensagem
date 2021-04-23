@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     fun enviaMensagem(view: View) {
         val editTextMensagem = findViewById<EditText>(R.id.editTextMensagem)
         val mensagem = editTextMensagem.text.toString()
+        val data = 25
 
         if(mensagem.trim().isBlank()){
             editTextMensagem.error = getString(R.string.mensagem_vazia)
@@ -30,7 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         val intent = Intent(this, MostraMensagemActivity::class.java)
 
-        intent.putExtra(INFO_EXTRA_MENSAGEM, mensagem)
+        intent.putExtra(INFO_EXTRA_MENSAGEM, "$mensagem $data")
         startActivity(intent)
     }
 }
