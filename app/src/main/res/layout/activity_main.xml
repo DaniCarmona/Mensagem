@@ -18,7 +18,7 @@
         android:layout_marginRight="8dp"
         android:layout_weight="1"
         android:ems="10"
-        android:inputType="textPersonName"
+        android:inputType="textLongMessage|textAutoCorrect|textMultiLine"
         android:text="@string/mensagem" />
 
     <Button
