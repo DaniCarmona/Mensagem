@@ -14,5 +14,7 @@ class MostraMensagemActivity : AppCompatActivity() {
         val data : Date = intent.getSerializableExtra(MainActivity.INFO_EXTRA_DATA) as Date
         val textViewMensagem = findViewById<TextView>(R.id.editTextMensagem)
         textViewMensagem.setText(mensagem)
+        findViewById<TextView>(R.id.data)
+        textViewMensagem.setText(data.toString())
     }
 }
