@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
     companion object {
-        val INFO_EXTRA_MENSAGEM : String = "MENSAGEM"
+        const val INFO_EXTRA_MENSAGEM  = "MENSAGEM"
+        const val INFO_EXTRA_DATA = "DATA"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,16 +24,19 @@ class MainActivity : AppCompatActivity() {
     fun enviaMensagem(view: View) {
         val editTextMensagem = findViewById<EditText>(R.id.editTextMensagem)
         val mensagem = editTextMensagem.text.toString()
-        val data = 25
+        val data = Date()
 
         if(mensagem.trim().isBlank()){
             editTextMensagem.error = getString(R.string.mensagem_vazia)
             return
         }
 
-        val intent = Intent(this, MostraMensagemActivity::class.java)
+        val intent = Intent(this, MostraMensagemActivity::class.java).apply {
+            putExtra(INFO_EXTRA_MENSAGEM, mensagem )
+            putExtra(INFO_EXTRA_DATA, data)
+        }
 
-        intent.putExtra(INFO_EXTRA_MENSAGEM, "$mensagem $data")
+
         startActivity(intent)
     }
 }
